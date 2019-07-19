@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import axiosWithAuth from './authConfig';
 
- const FriendList = () => {
-     const [data, setData] = useState([]);
+ const DataList = () => {
+     const [newData, setNewData] = useState([]);
 
      const updateData = res => {
-         setData(res)
+         setNewData(res)
      }
 
      useEffect(() => {
       
     axiosWithAuth()
         .get("/restricted/data")
-        .then(res => updateData(res.data) )
+        .then(res => {updateData(res.data); console.log(res.data)} )
         .catch(error => console.error(error))
      }, [])
-
+    console.log(updateData)
     return (
         <div>
-         { data.map((item,key) => (
+         { newData.map((item,key) => (
             <div key={key}>
               
               <p>{item.name} </p>
@@ -30,4 +30,4 @@ import axiosWithAuth from './authConfig';
         </div>
     )
 }
-export default FriendList;
+export default DataList;

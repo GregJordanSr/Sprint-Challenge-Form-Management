@@ -6,7 +6,7 @@ import axios from 'axios';
     return axios.create({
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `${token}`
+            authorization: `${token}`
         }, baseURL: "http://localhost:5000/api"
     });
 };

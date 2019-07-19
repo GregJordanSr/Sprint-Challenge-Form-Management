@@ -1,6 +1,6 @@
 import React from 'react';
 import RegistrationForm from './components/RegistrationForm';
-import Data-List from './components/Data-List'
+import DataList from './components/DataList'
 import { Route, Link, Redirect } from 'react-router-dom'
 import './App.css';
 
@@ -12,7 +12,7 @@ function App() {
         localStorage.getItem("token") ? (
           <Component {...props} />
         ) : (
-          <Redirect to="/login" />
+          <Redirect to="/" />
         )
       }
     />  
@@ -21,8 +21,11 @@ function App() {
 
   return (
     <div className="App">
+    <div><Link to="/data-list">DataList</Link></div>
+   
       <header className="App-header">
-        <RegistrationForm />
+      <PrivateRoute exact path="/data-list" component={DataList}/>
+        <Route exact path="/" component={RegistrationForm}/>
       </header>
     </div>
   );

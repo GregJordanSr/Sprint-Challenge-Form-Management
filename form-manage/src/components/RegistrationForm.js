@@ -59,11 +59,11 @@ const FormikRegistrationForm = withFormik({
     }),
 
     handleSubmit(values,formikBag){
-        const url = "/login"
+        const url = "/register"
         return axiosWithAuth().post(url,values).then(res => {
-            localStorage.setItem("token", res.data.payload)
+            localStorage.setItem("token", res.data.token)
             alert('This is the server response: ' + res.data.message)
-            console.log( + res.data)
+            
             formikBag.resetForm()
         })
 
