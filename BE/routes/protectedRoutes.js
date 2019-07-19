@@ -5,7 +5,7 @@ const db = require('../dbConfig');
 
 const secret = 'secret';
 
-let data = [
+export default let data = [
   {
     name: 'Brisket',
     course: 'Main',
