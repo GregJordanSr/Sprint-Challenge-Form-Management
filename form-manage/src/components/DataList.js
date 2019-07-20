@@ -17,7 +17,7 @@ import axiosWithAuth from './authConfig';
      }, [])
     console.log(updateData)
     return (
-        <div>
+        <div >
          { newData.map((item,key) => (
             <div key={key}>
               

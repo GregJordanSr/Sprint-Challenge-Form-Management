@@ -2,7 +2,10 @@
 
 - [ ] Why are forms used so often in web applications and software?
 
+    Forms are used to collect user data and we are constantly using that data to target our users directly.
+
 - [ ] What advantages are there by using a forms library like Formik?
+    
 
 - [ ] What is stateful logic?
 
